@@ -185,8 +185,6 @@ def chooseFile():               # Rasfoieste file
         print(f"A '{filename_pf}' fájl letre lett hozva")
     else:
         print(f"A '{filename_pf}' fájl már létezik.")
-   
-    
     
     # Excel fájl és munkalap megnyitása
     wb = xw.Book(filename_out)  # Excel fájl betöltése
@@ -208,7 +206,6 @@ def chooseFile():               # Rasfoieste file
     first_row = used_range.row       
     last_row = used_range.last_cell.row # Az utolsó nem üres sor
     last_col = used_range.last_cell.column # Az utolsó nem üres oszlop
-
 
     # Ellenőrzés és adatfeldolgozás
     for row in range(1, 2 ):  # 1-től az utolsó sorig   
@@ -259,8 +256,7 @@ def chooseFile():               # Rasfoieste file
         if cell_value is not None and cell_value not in DENUMIRECODpachet:
             DENUMIRECODpachet.append(cell_value)
             print(f"{c}:{row},{col},{cell_value} ")
-
-
+            
     LENGTH_DENUMIRECODpachet=len(DENUMIRECODpachet)
     LENGTH_DENUMIREcultura=len(DENUMIREcultura)
     LENGTH_DENUMIREcategorie=len(DENUMIREcategorie)
@@ -279,8 +275,6 @@ def chooseFile():               # Rasfoieste file
         sheet.cells(last_row+3+i,last_col-4).value =SUPRAFATAcultura[i]
         sheet.cells(last_row+3+i,last_col-5).value =cultura
         print(DENUMIREcultura, SUPRAFATAcultura    )   
-    
-
 
     for i in range(0,LENGTH_DENUMIREcategorie): 
     
@@ -314,9 +308,6 @@ def chooseFile():               # Rasfoieste file
         sheet.cells(last_row+3+i,last_col-1).value =pachet
         print(DENUMIRECODpachet, SUPRAFATAcatPachet    ) 
 
-
-
-
     TOTAL=0.00
     for i in range(0,len(SUPRAFATAcategorie)):
         Supr=float(SUPRAFATAcategorie[i])
@@ -331,17 +322,9 @@ def chooseFile():               # Rasfoieste file
         print(f"Hiba mentés közben: {e}")
     finally:
         wb.close()            
-    
-            
-                
-                            
-    
+
    # wb.save()
    # wb = xw.Book(filename_out)
-
-    
-    
-
    
 b_chooseFile = tkinter.Button(main_win, text = "Răsfoiește", width = 10, height = 1, command = chooseFile)
 b_chooseFile.pack()
