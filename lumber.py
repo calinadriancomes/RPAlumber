@@ -12,7 +12,7 @@ from  openpyxl import *
 from openpyxl.utils import get_column_letter
 import xlwings as xw
 import os
-import pandas as pd
+ 
 
 COORDCOLUMNparc=0
 COORDCOLUMNcategorie=0
@@ -336,3 +336,4 @@ b_exit = tkinter.Button(main_win, text = "Exit",command = main_win.destroy)
 b_exit.pack()
 
 main_win.mainloop()
+
